@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Games</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="comms.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+
+<!--Start of Page 1-->
+<body>
+
+    <div data-role="page" id="home">
+ 
+
+        <div data-role="header" data-theme='b'>
+            <h1>My Games</h1>
+            <div data-role="navbar" data-theme="b">
+                <ul>
+                    <li><a href="#Load">Add Game</a></li>
+                    <li><a href="#ListAll">List of Games</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <center>
+        <div data-role="content" data-theme='b' >
+            <div class="newFont">
+                <h2 class="myHeader">Ultimate Game Reviewer/Collector</h2>
+                <div class="myHeader">Best site to review and collect your favorite games!</div>
+                <img class="center" id="image1" src="GameReview.jpg" class="center" >
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+        </center>
+
+        <div data-role="footer" data-theme='b'>
+            <h1>Copyright 2022 by Diego Rendon</h1>
+        </div>
+    </div>
+
+
+    <!--Start of Page 2-->
+    <div data-role="page" id="Load">
+        <div data-role="header" data-theme='b'>
+            <h1>Add Game</h1>
+            <div data-role="navbar" data-theme='b'>
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#ListAll">List Games</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div data-role="content" data-theme='b'>
+            <h2>Enter a new game</h2>
+            Name of the game <br />
+            <input type="text" value="" id="title" />
+            Release date <br />
+            <input type="text" value="" id="released" />
+            Why is this game so good? <br />
+            <input type="text" value="" id="pros" />
+            Anything to improve? <br />
+            <input type="text" value="" id="cons" />
+            Rate the game from 1-5: (Decimal ratings are valid. Ex:4.7) <br />
+            <input type="text" value="" id="rate" />
+            
+            <div class="ui-field-contain">
+                <label for="select-genre">Genre of the game</label>
+                <select name="select-genre" id="select-genre">
+                    <option value="Shooter">FPS or TPS</option>
+                    <option value="MMO">MMO</option>
+                    <option value="RPG">RPG</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Indie">Indie</option>
+                    <option value="SportGame">Sport</option>
+                    <option value="Survival">Survival</option>
+                    <option value="Puzzle">Puzzle</option>
+                    <option value="Sim">Simulator</option>
+                </select>
+
+
+
+                
+            </div>
+
+            <input type="button" value="Click to add game" id="buttonAdd" data-inline="true" />
+            <input type="button" value="Click to clear" id="buttonClear" data-inline="true" />
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        </div>
+
+        <div data-role="footer" data-theme='b'>
+            <h1>Copyright 2022 by Diego Rendon</h1>
+        </div>
+    </div>
+
+    <!--Start of Page 3-->
+
+    <div data-role="page" id="ListAll">
+        <div data-role="header" data-theme='b'>
+            <h1>List of Games</h1>
+            <div data-role="navbar" data-theme='b'>
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#Load">Add Game</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="content" data-theme="b">
+            <p>My Games</p>
+            <div id="divGamesList">
+                <ul id="myul"></ul>
+            </div>
+            <input type="button" value="Sort By Genre" id="buttonSortGenre" data-inline="true" />
+            <input type="button" value="Sort By Title" id="buttonSortTitle" data-inline="true" />
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br>
+        </div>
+
+        <div data-role="footer" data-theme='b'>
+            <h1>Copyright 2022 by Diego Rendon</h1>
+        </div>
+    </div>
+        
+    <!--Start of Page 4-->
+    <div data-role="page" id="details">
+
+        <div data-role="header" data-theme='b'>
+            <h1>Details</h1>
+            <div data-role="navbar" data-theme="b">
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#Load">Add Game</a></li>
+                    <li><a href="#ListAll">List of Game</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="content" data-theme='b'>
+            <h1>Here are the details about the game:</h1>
+            <h2>Title:</h2>
+            <p id="gameTitle"></p>
+            <h2>The ID:</h2>
+            <p id="gameID"></p>
+            <h2>The rating you gave it:</h2>
+            <p id="gameRate"></p>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+        </div>
+
+        <div data-role="footer" data-theme='b'>
+            <h1>Copyright 2022 by Diego Rendon</h1>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>
